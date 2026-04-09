@@ -18,7 +18,6 @@ export class ReceiptsController {
   findOne(@Param('id') id: string) {
     return this.receiptsService.findOne(id);
   }
-
   @Post()
   create(@Body() dto: CreateReceiptDto) {
     return this.receiptsService.create(dto);
