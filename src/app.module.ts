@@ -7,6 +7,9 @@ import { ReceiptsController } from './receipts/receipts.controller';
 import { ReceiptsService } from './receipts/receipts.service';
 import { Receipt } from './database/entities/receipts.entity';
 import { NotificationsModule } from './notifications/notifications.module';
+import { ReceiptsModule } from './receipts/receipts.module';
+import { OrdersModule } from './orders/orders.module';
+import { CoreModule } from './core/core.module';
 
 @Module({
   imports: [
@@ -26,6 +29,12 @@ import { NotificationsModule } from './notifications/notifications.module';
     TypeOrmModule.forFeature([Receipt]),
 
     NotificationsModule,
+
+    ReceiptsModule,
+
+    OrdersModule,
+
+    CoreModule,
   ],
   controllers: [AppController, ReceiptsController],
   providers: [AppService, ReceiptsService],
