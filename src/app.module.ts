@@ -11,6 +11,12 @@ import { ReceiptsModule } from './receipts/receipts.module';
 import { OrdersModule } from './orders/orders.module';
 import { CoreModule } from './core/core.module';
 
+// GraphQL imports
+import { GraphQLModule } from '@nestjs/graphql';
+import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
+import { join } from 'path';
+import { CategoriesModule } from './category/category.module';
+import { GraphqlModule } from './graphql/graphql.module';
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }), // ✅ load .env
@@ -35,7 +41,19 @@ import { CoreModule } from './core/core.module';
     OrdersModule,
 
     CoreModule,
-  ],
+
+    CategoriesModule,
+
+     // enableGraphQL - schema-first approach
+     GraphQLModule.forRoot<ApolloDriverConfig>({
+       driver: ApolloDriver,
+       typePaths: [join(process.cwd(), 'src/graphql/schema/*.graphql')],
+       playground: true,
+     }),
+
+     GraphqlModule,
+
+   ],
   controllers: [AppController, ReceiptsController],
   providers: [AppService, ReceiptsService],
 })

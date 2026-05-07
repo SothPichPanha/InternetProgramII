@@ -15,8 +15,7 @@ import { NotificationsModule } from 'src/notifications/notifications.module';
           port: 8877,
         },
       },
-    ]),
-    forwardRef(() => NotificationsModule),
+    ]),NotificationsModule
   ],
   controllers: [OrdersController],
   providers: [OrdersService],

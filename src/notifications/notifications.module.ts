@@ -6,6 +6,6 @@ import { CoreModule } from 'src/core/core.module';
 @Module({
   imports: [CoreModule],
   providers: [NotificationsService],
-   exports: [NotificationsService],
+  exports: [NotificationsService],
 })
 export class NotificationsModule {}
