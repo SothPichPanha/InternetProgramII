@@ -47,8 +47,9 @@ import { GraphqlModule } from './graphql/graphql.module';
      // enableGraphQL - schema-first approach
      GraphQLModule.forRoot<ApolloDriverConfig>({
        driver: ApolloDriver,
-       typePaths: [join(process.cwd(), 'src/graphql/schema/*.graphql')],
-       playground: true,
+      //  typePaths: [join(process.cwd(), 'src/graphql/schema/*.graphql')],
+      autoSchemaFile: join(process.cwd(), 'src/graphql/schema.gql'),
+      playground: true,
      }),
 
      GraphqlModule,
