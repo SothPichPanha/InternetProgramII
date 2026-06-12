@@ -11,5 +11,20 @@
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.60.0"
-  }
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "playwright": "^1.60.0",
+    "playwright-core": "^1.60.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SothPichPanha/InternetProgramII.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SothPichPanha/InternetProgramII/issues"
+  },
+  "homepage": "https://github.com/SothPichPanha/InternetProgramII#readme"
 }
